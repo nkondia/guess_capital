@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<h3>Guess the capital I'm thinking of...</h3>
+<form action="/" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.body }}
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button><br>
+    <div id="guess result" style="margin-top: 10px">{{ guess_result }}</div>
+</form>
+{% endblock %}
